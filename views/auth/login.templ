@@ -3,7 +3,12 @@ package auth
 templ Login() {
 	<div>
 		<h1>Login</h1>
-		<form method="POST" action="/login">
+		<form
+			method="POST"
+			hx-post="/login"
+			hx-target="#login-message"
+			hx-swap="innerHTML"
+		>
 			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" required/>
 			<br/>
@@ -12,5 +17,6 @@ templ Login() {
 			<br/>
 			<button type="submit">Login</button>
 		</form>
+		<div id="login-message"></div>
 	</div>
 }
